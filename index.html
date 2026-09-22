@@ -49,11 +49,47 @@ html{scroll-padding-top:90px}
 .side-index{font-variant-numeric:tabular-nums;color:#6c6c6c;font-size:11px;min-width:24px}
 .orb{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.17),transparent 70%);filter:blur(55px);pointer-events:none;z-index:-1}
 .service-checkbox:checked+label{border-color:var(--gold);background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(20,20,20,.9));box-shadow:0 0 20px rgba(212,175,55,.2)}
+
+/* FOTO GRANDE COMO CAPA PRINCIPAL */
+.hero-capa {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.hero-imagem-fundo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  background-image: url("keity-profissional.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+.hero-sombas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(to left, transparent, #050505 90%);
+  z-index: 2;
+}
+.hero-conteudo {
+  position: relative;
+  z-index: 3;
+}
+
+@media(max-width:1024px){
+  .hero-imagem-fundo { width: 100%; opacity: 0.3; }
+  .hero-sombas { display: none; }
+}
 @media(max-width:767px){
   #sidebar{transform:translateX(-105%);transition:.3s}
   #sidebar.open{transform:translateX(0)}
   #content{margin-left:0!important}
-  .hero-photo{max-height:480px}
 }
 </style>
 </head>
@@ -106,55 +142,48 @@ html{scroll-padding-top:90px}
     </div>
   </header>
 
-  <!-- INÍCIO -->
-  <section id="inicio" class="min-h-screen px-6 sm:px-10 lg:px-16 pt-32 pb-20 flex items-center">
-    <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center">
-      <div class="space-y-6">
-        <span class="inline-flex glass rounded-full px-4 py-2 text-gold text-xs uppercase tracking-wider">
-          <i class="fa-solid fa-gem mr-2"></i> Especialista em Fios Tecnológicos
-        </span>
-        <h1 class="font-serif text-4xl sm:text-6xl font-bold leading-tight text-white">
-          Realce o que te faz <span class="gold-gradient">única</span>
-        </h1>
-        <p class="text-gray-300 leading-relaxed max-w-xl">
-          Transforme seu olhar com precisão, cuidado e elegância. Extensão de cílios em Fios Tecnológicos e Design Personalizado de Sobrancelhas.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#agendamento" class="gold-btn rounded-2xl px-7 py-4 text-center">
-            Agendar horário <i class="fa-solid fa-arrow-right ml-2"></i>
-          </a>
-          <a href="#servicos" class="glass rounded-2xl px-7 py-4 text-center hover:text-gold">
-            Conhecer procedimentos
-          </a>
-        </div>
-        <div class="grid grid-cols-3 gap-3 border-t border-gold/20 pt-6 max-w-xl">
-          <div>
-            <b class="block text-gold font-serif text-xl">+1.200</b>
-            <small class="text-gray-400">Olhares transformados</small>
+  <!-- INÍCIO — FOTO GRANDE COMO CAPA PRINCIPAL -->
+  <section id="inicio" class="hero-capa flex items-center">
+    <!-- FOTO GRANDE NO LADO DIREITO -->
+    <div class="hero-imagem-fundo"></div>
+    <div class="hero-sombas"></div>
+    
+    <div class="hero-conteudo w-full px-6 sm:px-10 lg:px-16 pt-32 pb-20">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <span class="inline-flex glass rounded-full px-4 py-2 text-gold text-xs uppercase tracking-wider">
+            <i class="fa-solid fa-gem mr-2"></i> Especialista em Fios Tecnológicos
+          </span>
+          <h1 class="font-serif text-4xl sm:text-6xl font-bold leading-tight text-white">
+            Realce o que te faz <span class="gold-gradient">única</span>
+          </h1>
+          <p class="text-gray-300 leading-relaxed max-w-xl">
+            Transforme seu olhar com precisão, cuidado e elegância. Extensão de cílios em Fios Tecnológicos e Design Personalizado de Sobrancelhas.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#agendamento" class="gold-btn rounded-2xl px-7 py-4 text-center">
+              Agendar horário <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+            <a href="#servicos" class="glass rounded-2xl px-7 py-4 text-center hover:text-gold">
+              Conhecer procedimentos
+            </a>
           </div>
-          <div>
-            <b class="block text-gold font-serif text-xl">100%</b>
-            <small class="text-gray-400">Cuidado VIP</small>
-          </div>
-          <div>
-            <b class="block text-gold font-serif text-xl">5.0 ★</b>
-            <small class="text-gray-400">Excelência</small>
-          </div>
-        </div>
-      </div>
-      <div class="relative flex justify-center">
-        <div class="absolute inset-0 rounded-full bg-gold/10 blur-3xl"></div>
-        <div class="relative w-full max-w-md rounded-3xl p-2 border-2 border-gold/50 bg-gradient-to-br from-gold-light via-gold to-gold-dark shadow-2xl shadow-gold/20">
-          <div class="rounded-2xl overflow-hidden bg-black">
-            <img src="keity-profissional.jpg" alt="Keity Loraine, profissional do Studio Keity Beauty" 
-                 class="hero-photo w-full aspect-[4/5] object-cover object-center opacity-95">
-            <div class="p-5 bg-black/80">
-              <p class="font-serif text-xl font-bold text-white">Keity Loraine</p>
-              <p class="text-xs text-gold uppercase tracking-wider">Master Lash & Brow Designer</p>
-              <p class="text-xs text-gray-400 mt-2">Atendimento exclusivo com hora marcada</p>
+          <div class="grid grid-cols-3 gap-3 border-t border-gold/20 pt-6 max-w-xl">
+            <div>
+              <b class="block text-gold font-serif text-xl">+1.200</b>
+              <small class="text-gray-400">Olhares transformados</small>
+            </div>
+            <div>
+              <b class="block text-gold font-serif text-xl">100%</b>
+              <small class="text-gray-400">Cuidado VIP</small>
+            </div>
+            <div>
+              <b class="block text-gold font-serif text-xl">5.0 ★</b>
+              <small class="text-gray-400">Excelência</small>
             </div>
           </div>
         </div>
+        <div class="hidden lg:block"></div>
       </div>
     </div>
   </section>
@@ -308,7 +337,6 @@ html{scroll-padding-top:90px}
 </main>
 
 <script>
-// Serviços: nome, tempo em minutos, ícone FontAwesome
 const services = [
   ['Extensão Fios Tecnológicos', 120, 'fa-eye'],
   ['Design de Sobrancelhas + Henna', 45, 'fa-wand-magic-sparkles'],
@@ -318,7 +346,6 @@ const services = [
   ['Remoção Segura de Cílios', 30, 'fa-shield-heart']
 ];
 
-// Renderiza os cards de serviço
 const options = document.getElementById('options');
 services.forEach((s, i) => {
   options.insertAdjacentHTML('beforeend', `
@@ -330,7 +357,6 @@ services.forEach((s, i) => {
 </label>`);
 });
 
-// Atualiza resumo e tempo total
 const checks = [...document.querySelectorAll('.service-checkbox')];
 function update() {
   const selected = checks.filter(c => c.checked);
@@ -357,7 +383,6 @@ Quais horários estão disponíveis?`;
 }
 checks.forEach(c => c.addEventListener('change', update));
 
-// Navegação ativa conforme rolagem
 const links = [...document.querySelectorAll('.sidebar-link')];
 const sections = links.map(a => document.querySelector(a.getAttribute('href')));
 const observer = new IntersectionObserver(entries => {
@@ -371,7 +396,6 @@ const observer = new IntersectionObserver(entries => {
 }, { rootMargin: '-35% 0px -55% 0px' });
 sections.forEach(s => s && observer.observe(s));
 
-// Menu mobile
 const sidebar = document.getElementById('sidebar');
 document.getElementById('menuToggle').onclick = () => sidebar.classList.toggle('open');
 links.forEach(l => l.addEventListener('click', () => sidebar.classList.remove('open')));
