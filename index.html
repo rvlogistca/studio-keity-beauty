@@ -209,7 +209,7 @@
         </nav>
     </header>
 
-    <section id="inicio" class="relative pt-32 pb-20 md:pt-44 md:pb-32 px-4 max-w-7xl mx-auto min-h-screen flex items-center">
+    <section id="inicio" class="relative pt-32 pb-20 md:pt-44 md:pb-32 px-4 max-w-7xl mx-auto flex items-center">
         <div class="grid md:grid-cols-12 gap-12 items-center w-full">
             
             <!-- Left Copy Column -->
@@ -267,23 +267,9 @@
                 <!-- Gold Bordered Container -->
                 <div class="relative w-full max-w-sm sm:max-w-md aspect-[4/5] rounded-3xl p-3 gold-border-gradient shadow-2xl shadow-gold/20">
                     <div class="w-full h-full rounded-2xl overflow-hidden relative bg-black">
-                        <div class="relative w-full h-full">
-                            <img id="main-studio-image"
-                                 src="keity-procedimento.jpg"
-                                 alt="Studio Keity Beauty - Procedimento de beleza"
-                                 class="w-full h-full object-cover object-center opacity-90 transition-opacity duration-700">
-
-                            <div class="absolute bottom-28 left-0 right-0 flex justify-center gap-2 z-10">
-                                <button type="button" onclick="changeStudioImage(0)" aria-label="Ver foto do procedimento"
-                                        class="studio-dot w-2.5 h-2.5 rounded-full bg-white border border-gold"></button>
-                                <button type="button" onclick="changeStudioImage(1)" aria-label="Ver certificado profissional"
-                                        class="studio-dot w-2.5 h-2.5 rounded-full bg-gray-500 border border-gold"></button>
-                                <button type="button" onclick="changeStudioImage(2)" aria-label="Ver certificado do curso"
-                                        class="studio-dot w-2.5 h-2.5 rounded-full bg-gray-500 border border-gold"></button>
-                                <button type="button" onclick="changeStudioImage(3)" aria-label="Ver depoimento da cliente"
-                                        class="studio-dot w-2.5 h-2.5 rounded-full bg-gray-500 border border-gold"></button>
-                            </div>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1583001809873-a1284d563375?auto=format&fit=crop&w=800&q=80" 
+                             alt="Keity Loraine - Lash Designer Studio" 
+                             class="w-full h-full object-cover object-center opacity-90 transition-transform duration-700 hover:scale-105">
                         
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30"></div>
                         
@@ -779,39 +765,6 @@
     </footer>
 
     <script>
-        // Galeria de imagens da seção principal
-        const studioImages = [
-            "keity-procedimento.jpg",
-            "keity-certificado-profissional.jpg",
-            "keity-certificado-editado.png",
-            "keity-depoimento.jpg"
-        ];
-
-        function changeStudioImage(index) {
-            const image = document.getElementById("main-studio-image");
-            const dots = document.querySelectorAll(".studio-dot");
-
-            if (!image || !studioImages[index]) return;
-
-            image.style.opacity = "0.2";
-
-            setTimeout(() => {
-                image.src = studioImages[index];
-                image.style.opacity = "0.9";
-            }, 180);
-
-            dots.forEach((dot, dotIndex) => {
-                dot.classList.toggle("bg-white", dotIndex === index);
-                dot.classList.toggle("bg-gray-500", dotIndex !== index);
-            });
-        }
-
-        let currentStudioImage = 0;
-        setInterval(() => {
-            currentStudioImage = (currentStudioImage + 1) % studioImages.length;
-            changeStudioImage(currentStudioImage);
-        }, 5000);
-
         // Interactive Service Calculation and Dynamic WhatsApp Link Construction
         function calculateServices() {
             const checkboxes = document.querySelectorAll('.service-checkbox');
@@ -864,4 +817,4 @@
         }
     </script>
 </body>
-</html>
+                                </html>
