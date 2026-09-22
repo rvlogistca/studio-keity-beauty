@@ -1,1222 +1,289 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Studio Keity Beauty | Lash Designer & Sobrancelhas</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<script>
-tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-                gold: {
-                    light: '#FCE7AC',
-                    DEFAULT: '#D4AF37',
-                    dark: '#AA771C'
-                }
-            },
-            fontFamily: {
-                serif: ['Cinzel', 'serif'],
-                sans: ['"Plus Jakarta Sans"', 'sans-serif']
-            }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivi Chagas | Nail Designer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-    }
-};
-</script>
 
-<style>
-:root {
-    --gold: #D4AF37;
-    --bg: #050505;
-}
+        body {
+            background-color: #0f0f11;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 10px;
+        }
 
-* {
-    box-sizing: border-box;
-}
+        .container {
+            background: #1a1a1e;
+            border: 1px solid #2a2a30;
+            border-radius: 20px;
+            padding: 40px 25px;
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #d4af37;
+            margin: 0 auto 20px;
+            display: block;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
 
-body {
-    margin: 0;
-    background: var(--bg);
-    color: #e5e5e5;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    overflow-x: hidden;
-}
+        h1 {
+            font-size: 2.2rem;
+            color: #d4af37;
+            margin-bottom: 5px;
+            letter-spacing: 1.5px;
+        }
 
-.gold-gradient {
-    background: linear-gradient(
-        135deg,
-        #fff1b0,
-        #d4af37,
-        #996b1f
-    );
+        .subtitle {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
 
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
+        .description {
+            font-size: 1.05rem;
+            color: #d1d1d1;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
 
-.glass {
-    background: rgba(18, 18, 18, 0.72);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    box-shadow: 0 10px 40px -10px #000;
-}
+        .section-title {
+            font-size: 1.1rem;
+            color: #d4af37;
+            margin: 30px 0 15px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #2a2a30;
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
 
-.card {
-    background: linear-gradient(
-        135deg,
-        rgba(255,255,255,.035),
-        rgba(20,20,20,.86)
-    );
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
 
-    border: 1px solid rgba(212,175,55,.2);
-    transition: .3s;
-}
+        .service-card {
+            background: #24242a;
+            border: 1px solid #33333c;
+            border-radius: 12px;
+            padding: 15px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(212,175,55,.65);
-}
+        .service-card:hover {
+            transform: translateY(-3px);
+            border-color: #d4af37;
+        }
 
-.gold-btn {
-    background: linear-gradient(
-        135deg,
-        #ffe382,
-        #d4af37,
-        #996b1f
-    );
+        .service-card h3 {
+            color: #e8b4b8;
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-    color: #000;
-    font-weight: 800;
-    box-shadow: 0 0 20px rgba(212,175,55,.3);
-    transition: .3s;
-}
+        .service-card p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
 
-.gold-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 35px rgba(212,175,55,.65);
-}
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 30px;
+        }
 
-.gold-btn:disabled {
-    cursor: not-allowed;
-}
+        .gallery-item {
+            background: #24242a;
+            border-radius: 10px;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #33333c;
+            color: #a0a0a0;
+            font-size: 0.85rem;
+            gap: 8px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.2s, border-color 0.2s;
+        }
 
-.sidebar-link {
-    position: relative;
-    color: #c4c4c4;
-    transition: .25s;
-}
+        .gallery-item:hover {
+            transform: scale(1.03);
+            border-color: #e8b4b8;
+        }
 
-.sidebar-link:hover,
-.sidebar-link.active {
-    color: var(--gold);
-}
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
 
-.side-index {
-    font-variant-numeric: tabular-nums;
-    color: #6c6c6c;
-    font-size: 11px;
-    min-width: 24px;
-}
+        .gallery-item .overlay {
+            position: relative;
+            z-index: 2;
+            background: rgba(15, 15, 17, 0.6);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
 
-/* HERO COM IMAGEM DE FUNDO */
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
 
-.hero {
-    position: relative;
-    isolation: isolate;
-    min-height: 100svh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    background: #050505;
-}
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 24px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
 
-.hero-image {
-    position: absolute;
-    inset: -15px;
+        .btn:hover {
+            transform: translateY(-2px);
+        }
 
-    width: calc(100% + 30px);
-    height: calc(100% + 30px);
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
 
-    background-image: url("keity-profissional.jpg");
-    background-size: cover;
-    background-position: center 18%;
-    background-repeat: no-repeat;
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+        }
 
-    filter: blur(3px) saturate(.88);
-    transform: scale(1.04);
-
-    z-index: 0;
-}
-
-.hero-image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(5,5,5,.97) 0%,
-            rgba(5,5,5,.88) 27%,
-            rgba(5,5,5,.52) 51%,
-            rgba(5,5,5,.18) 78%,
-            rgba(5,5,5,.42) 100%
-        ),
-        linear-gradient(
-            0deg,
-            rgba(5,5,5,.72),
-            transparent 45%,
-            rgba(5,5,5,.28)
-        );
-}
-
-.hero-glow {
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 78% 40%,
-            rgba(212,175,55,.14),
-            transparent 30%
-        );
-
-    z-index: 1;
-    pointer-events: none;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 10;
-}
-
-@media (max-width: 1024px) {
-    .hero-image {
-        background-position: center top;
-    }
-
-    .hero-image::after {
-        background:
-            linear-gradient(
-                90deg,
-                rgba(5,5,5,.90),
-                rgba(5,5,5,.55)
-            ),
-            linear-gradient(
-                0deg,
-                rgba(5,5,5,.78),
-                rgba(5,5,5,.20)
-            );
-    }
-}
-
-@media (max-width: 767px) {
-    #sidebar {
-        transform: translateX(-105%);
-        transition: .3s;
-    }
-
-    #sidebar.open {
-        transform: translateX(0);
-    }
-
-    #content {
-        margin-left: 0 !important;
-    }
-
-    .hero {
-        min-height: 900px;
-    }
-
-    .hero-image {
-        background-position: 58% top;
-        filter: blur(3px) saturate(.88);
-    }
-
-    .hero-image::after {
-        background:
-            linear-gradient(
-                180deg,
-                rgba(5,5,5,.22),
-                rgba(5,5,5,.94)
-            );
-    }
-}
-</style>
+        .slogan {
+            font-size: 1.1rem;
+            color: #e8b4b8;
+            font-style: italic;
+            font-weight: 500;
+        }
+    </style>
 </head>
-
-<body class="antialiased selection:bg-gold selection:text-black">
-
-<!-- BOTÃO MENU MOBILE -->
-
-<button
-    id="menuToggle"
-    class="fixed top-4 left-4 z-[70] md:hidden glass rounded-xl px-4 py-3 text-gold"
-    aria-label="Abrir menu">
-
-    <i class="fa-solid fa-bars"></i>
-</button>
-
-<!-- MENU LATERAL -->
-
-<aside
-    id="sidebar"
-    class="fixed inset-y-0 left-0 z-[60] w-72 bg-[#0b0b0b] border-r border-gold/20 px-8 py-10 flex flex-col justify-between">
-
-    <div>
-
-        <a href="#inicio" class="block text-center mb-14">
-
-            <div class="text-5xl gold-gradient font-serif">
-                K
-            </div>
-
-            <div class="font-serif tracking-[.28em] text-xl text-white">
-                STUDIO KEITY
-            </div>
-
-            <div class="text-[10px] tracking-[.5em] text-gold mt-2">
-                BEAUTY
-            </div>
-
-        </a>
-
-        <nav
-            class="space-y-8"
-            aria-label="Navegação principal">
-
-            <a
-                class="sidebar-link active flex items-center gap-4"
-                href="#inicio">
-
-                <span class="side-index">01</span>
-                <i class="fa-solid fa-house w-5"></i>
-                <span>Início</span>
-
-            </a>
-
-            <a
-                class="sidebar-link flex items-center gap-4"
-                href="#servicos">
-
-                <span class="side-index">02</span>
-                <i class="fa-solid fa-eye w-5"></i>
-                <span>Serviços</span>
-
-            </a>
-
-            <a
-                class="sidebar-link flex items-center gap-4"
-                href="#sobre">
-
-                <span class="side-index">03</span>
-                <i class="fa-solid fa-user w-5"></i>
-                <span>Sobre mim</span>
-
-            </a>
-
-            <a
-                class="sidebar-link flex items-center gap-4"
-                href="#agendamento">
-
-                <span class="side-index">04</span>
-                <i class="fa-regular fa-calendar w-5"></i>
-                <span>Agendamento</span>
-
-            </a>
-
-            <a
-                class="sidebar-link flex items-center gap-4"
-                href="#depoimentos">
-
-                <span class="side-index">05</span>
-                <i class="fa-regular fa-star w-5"></i>
-                <span>Avaliações</span>
-
-            </a>
-
-        </nav>
-
-    </div>
-
-    <div class="text-center text-gold/80 italic font-serif text-sm leading-relaxed">
-
-        Sua beleza é o nosso<br>
-        maior cuidado<br>
-
-        <span class="text-xl">♡</span>
-
-    </div>
-
-</aside>
-
-<!-- CONTEÚDO PRINCIPAL -->
-
-<main id="content" class="md:ml-72">
-
-    <!-- CABEÇALHO -->
-
-    <header class="fixed top-0 right-0 left-0 md:left-72 z-50 px-4 py-4">
-
-        <div class="max-w-7xl mx-auto flex justify-end">
-
-            <a
-                class="gold-btn rounded-full px-5 py-3 text-xs sm:text-sm flex items-center gap-2"
-                target="_blank"
-                rel="noopener"
-                href="https://wa.me/5545999936604?text=Ol%C3%A1!%20Quero%20agendar%20meu%20hor%C3%A1rio%20no%20Studio%20Keity.">
-
-                <i class="fa-regular fa-calendar"></i>
-
-                Agendar horário
-
-            </a>
-
-        </div>
-
-    </header>
-
-    <!-- INÍCIO -->
-
-    <section id="inicio" class="hero">
-
-        <!-- FOTO DA PROFISSIONAL -->
-
-        <div
-            class="hero-image"
-            aria-hidden="true">
-        </div>
-
-        <div
-            class="hero-glow"
-            aria-hidden="true">
-        </div>
-
-        <div class="relative z-10 w-full px-6 sm:px-10 lg:px-16 pt-32 pb-20">
-
-            <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-
-                <div class="hero-content space-y-6">
-
-                    <span class="inline-flex glass rounded-full px-4 py-2 text-gold text-xs uppercase tracking-wider">
-
-                        <i class="fa-solid fa-gem mr-2"></i>
-
-                        Especialista em Fios Tecnológicos
-
-                    </span>
-
-                    <h1 class="font-serif text-4xl sm:text-6xl font-bold leading-tight text-white">
-
-                        Realce o que te faz
-
-                        <span class="gold-gradient">
-                            única
-                        </span>
-
-                    </h1>
-
-                    <p class="text-gray-300 leading-relaxed max-w-xl">
-
-                        Transforme seu olhar com precisão, cuidado e elegância.
-                        Extensão de cílios em Fios Tecnológicos e Design
-                        Personalizado de Sobrancelhas.
-
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row gap-4">
-
-                        <a
-                            href="#agendamento"
-                            class="gold-btn rounded-2xl px-7 py-4 text-center">
-
-                            Agendar horário
-
-                            <i class="fa-solid fa-arrow-right ml-2"></i>
-
-                        </a>
-
-                        <a
-                            href="#servicos"
-                            class="glass rounded-2xl px-7 py-4 text-center hover:text-gold">
-
-                            Conhecer procedimentos
-
-                        </a>
-
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-3 border-t border-gold/20 pt-6 max-w-xl">
-
-                        <div>
-
-                            <b class="block text-gold font-serif text-xl">
-                                +1.200
-                            </b>
-
-                            <small class="text-gray-400">
-                                Olhares transformados
-                            </small>
-
-                        </div>
-
-                        <div>
-
-                            <b class="block text-gold font-serif text-xl">
-                                100%
-                            </b>
-
-                            <small class="text-gray-400">
-                                Cuidado VIP
-                            </small>
-
-                        </div>
-
-                        <div>
-
-                            <b class="block text-gold font-serif text-xl">
-                                5.0 ★
-                            </b>
-
-                            <small class="text-gray-400">
-                                Excelência
-                            </small>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="hidden lg:block relative z-10">
-
-                    <div class="glass rounded-3xl p-7 max-w-sm ml-auto">
-
-                        <p class="text-gold text-xs uppercase tracking-widest">
-
-                            Studio Keity Beauty
-
-                        </p>
-
-                        <p class="font-serif text-2xl text-white mt-3">
-
-                            Beleza que valoriza sua essência.
-
-                        </p>
-
-                        <p class="text-gray-400 text-sm mt-4">
-
-                            Uma experiência personalizada para realçar o seu olhar.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- SERVIÇOS -->
-
-    <section
-        id="servicos"
-        class="px-6 sm:px-10 lg:px-16 py-24">
-
-        <div class="max-w-7xl mx-auto">
-
-            <div class="text-center mb-14">
-
-                <span class="text-gold text-xs font-bold uppercase tracking-widest">
-
-                    Menu de procedimentos
-
-                </span>
-
-                <h2 class="font-serif text-3xl sm:text-5xl text-white mt-2">
-
-                    Nossos serviços exclusivos
-
-                </h2>
-
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
-
-                    Técnicas de alta precisão com foco em beleza,
-                    conforto e cuidado.
-
-                </p>
-
-            </div>
-
-            <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-
-                <div class="card rounded-3xl p-7">
-
-                    <i class="fa-solid fa-eye text-gold text-3xl"></i>
-
-                    <h3 class="font-serif text-xl text-white mt-5">
-
-                        Fios Tecnológicos
-
-                    </h3>
-
-                    <p class="text-gray-400 text-sm mt-3">
-
-                        Volume expressivo, leveza e retenção superior.
-
-                    </p>
-
-                    <a
-                        href="#agendamento"
-                        class="text-gold text-sm block mt-6">
-
-                        Selecionar →
-
-                    </a>
-
-                </div>
-
-                <div class="card rounded-3xl p-7">
-
-                    <i class="fa-solid fa-feather-pointed text-gold text-3xl"></i>
-
-                    <h3 class="font-serif text-xl text-white mt-5">
-
-                        Lash Lifting Nutritivo
-
-                    </h3>
-
-                    <p class="text-gray-400 text-sm mt-3">
-
-                        Curvatura, alinhamento e tratamento dos cílios naturais.
-
-                    </p>
-
-                    <a
-                        href="#agendamento"
-                        class="text-gold text-sm block mt-6">
-
-                        Selecionar →
-
-                    </a>
-
-                </div>
-
-                <div class="card rounded-3xl p-7">
-
-                    <i class="fa-solid fa-wand-magic-sparkles text-gold text-3xl"></i>
-
-                    <h3 class="font-serif text-xl text-white mt-5">
-
-                        Design + Henna
-
-                    </h3>
-
-                    <p class="text-gray-400 text-sm mt-3">
-
-                        Mapeamento facial e definição harmônica das sobrancelhas.
-
-                    </p>
-
-                    <a
-                        href="#agendamento"
-                        class="text-gold text-sm block mt-6">
-
-                        Selecionar →
-
-                    </a>
-
-                </div>
-
-                <div class="card rounded-3xl p-7">
-
-                    <i class="fa-solid fa-sparkles text-gold text-3xl"></i>
-
-                    <h3 class="font-serif text-xl text-white mt-5">
-
-                        Brow Lamination
-
-                    </h3>
-
-                    <p class="text-gray-400 text-sm mt-3">
-
-                        Alinhamento moderno e efeito encorpado.
-
-                    </p>
-
-                    <a
-                        href="#agendamento"
-                        class="text-gold text-sm block mt-6">
-
-                        Selecionar →
-
-                    </a>
-
-                </div>
-
-                <div class="card rounded-3xl p-7">
-
-                    <i class="fa-solid fa-rotate-right text-gold text-3xl"></i>
-
-                    <h3 class="font-serif text-xl text-white mt-5">
-
-                        Manutenção de Cílios
-
-                    </h3>
-
-                    <p class="text-gray-400 text-sm mt-3">
-
-                        Higienização, substituição e preenchimento dos fios.
-
-                    </p>
-
-                    <a
-                        href="#agendamento"
-                        class="text-gold text-sm block mt-6">
-
-                        Selecionar →
-
-                    </a>
-
-                </div>
-
-                <div class="card rounded-3xl p-7">
-
-                    <i class="fa-solid fa-shield-heart text-gold text-3xl"></i>
-
-                    <h3 class="font-serif text-xl text-white mt-5">
-
-                        Remoção Segura
-
-                    </h3>
-
-                    <p class="text-gray-400 text-sm mt-3">
-
-                        Retirada cuidadosa das extensões.
-
-                    </p>
-
-                    <a
-                        href="#agendamento"
-                        class="text-gold text-sm block mt-6">
-
-                        Selecionar →
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- SOBRE -->
-
-    <section
-        id="sobre"
-        class="px-6 sm:px-10 lg:px-16 py-20">
-
-        <div class="max-w-6xl mx-auto glass rounded-3xl p-8 sm:p-12">
-
-            <span class="text-gold text-xs font-bold uppercase tracking-widest">
-
-                Sobre a profissional
-
-            </span>
-
-            <h2 class="font-serif text-3xl sm:text-4xl text-white mt-3">
-
-                Paixão pela beleza e domínio das técnicas
-
-            </h2>
-
-            <p class="text-gray-300 leading-relaxed mt-5">
-
-                Sou Keity Loraine, especialista em embelezamento do olhar
-                no Studio Keity Beauty. Meu compromisso é oferecer uma
-                experiência de cuidado, elegância e renovação da autoestima.
-
-            </p>
-
-            <div class="grid sm:grid-cols-2 gap-4 mt-8">
-
-                <div class="card rounded-2xl p-5">
-
-                    <i class="fa-solid fa-pump-soap text-gold text-xl"></i>
-
-                    <h3 class="text-white font-bold mt-3">
-
-                        Biossegurança
-
-                    </h3>
-
-                    <p class="text-gray-400 text-sm mt-2">
-
-                        Ambiente organizado, materiais descartáveis
-                        e atendimento cuidadoso.
-
-                    </p>
-
-                </div>
-
-                <div class="card rounded-2xl p-5">
-
-                    <i class="fa-solid fa-star-of-life text-gold text-xl"></i>
-
-                    <h3 class="text-white font-bold mt-3">
-
-                        Insumos premium
-
-                    </h3>
-
-                    <p class="text-gray-400 text-sm mt-2">
-
-                        Materiais selecionados e mapeamento personalizado.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- AGENDAMENTO -->
-
-    <section
-        id="agendamento"
-        class="px-6 sm:px-10 lg:px-16 py-20">
-
-        <div class="max-w-5xl mx-auto glass rounded-3xl p-6 sm:p-12">
-
-            <div class="text-center mb-10">
-
-                <span class="text-gold text-xs font-bold uppercase tracking-widest">
-
-                    Agendamento inteligente
-
-                </span>
-
-                <h2 class="font-serif text-3xl sm:text-4xl text-white mt-2">
-
-                    Monte seu pacote
-
-                </h2>
-
-                <p class="text-gray-400 text-sm mt-3">
-
-                    Selecione os procedimentos para gerar sua mensagem no WhatsApp.
-
-                </p>
-
-            </div>
-
-            <div
-                class="grid sm:grid-cols-2 gap-4"
-                id="options">
-
-            </div>
-
-            <div class="mt-8 rounded-2xl bg-black/70 border border-gold/30 p-6">
-
-                <p class="text-xs text-gray-400 uppercase">
-
-                    Procedimentos escolhidos
-
-                </p>
-
-                <p
-                    id="summary"
-                    class="text-white text-sm font-semibold mt-2">
-
-                    Nenhum procedimento selecionado
-
-                </p>
-
-                <p
-                    id="time"
-                    class="text-gold text-xs mt-2">
-
-                    Tempo estimado: 0 min
-
-                </p>
-
-                <button
-                    id="whatsapp"
-                    disabled
-                    class="gold-btn rounded-full px-6 py-4 mt-5 w-full disabled:opacity-40">
-
-                    Solicitar horário no WhatsApp
-
-                    <i class="fa-brands fa-whatsapp ml-2"></i>
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- DEPOIMENTOS -->
-
-    <section
-        id="depoimentos"
-        class="px-6 sm:px-10 lg:px-16 py-20">
-
-        <div class="max-w-7xl mx-auto">
-
-            <div class="text-center mb-12">
-
-                <span class="text-gold text-xs font-bold uppercase tracking-widest">
-
-                    Experiência das clientes
-
-                </span>
-
-                <h2 class="font-serif text-3xl sm:text-5xl text-white mt-2">
-
-                    Avaliações do Studio
-
-                </h2>
-
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-
-                <div class="card rounded-3xl p-7">
-
-                    <div class="text-gold">
-                        ★★★★★
-                    </div>
-
-                    <p class="text-gray-300 italic text-sm mt-4">
-
-                        "Os fios tecnológicos deixam um volume surreal,
-                        mas super leve nos olhos."
-
-                    </p>
-
-                    <p class="text-white font-bold text-sm mt-6">
-
-                        Mariana Costa
-
-                    </p>
-
-                </div>
-
-                <div class="card rounded-3xl p-7">
-
-                    <div class="text-gold">
-                        ★★★★★
-                    </div>
-
-                    <p class="text-gray-300 italic text-sm mt-4">
-
-                        "O design de sobrancelhas transformou
-                        a expressão do meu rosto."
-
-                    </p>
-
-                    <p class="text-white font-bold text-sm mt-6">
-
-                        Beatriz Silva
-
-                    </p>
-
-                </div>
-
-                <div class="card rounded-3xl p-7">
-
-                    <div class="text-gold">
-                        ★★★★★
-                    </div>
-
-                    <p class="text-gray-300 italic text-sm mt-4">
-
-                        "Atendimento VIP de verdade,
-                        com muito cuidado e atenção."
-
-                    </p>
-
-                    <p class="text-white font-bold text-sm mt-6">
-
-                        Fernanda Alves
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- RODAPÉ -->
-
-    <footer
-        class="border-t border-gold/20 px-6 sm:px-10 lg:px-16 py-12">
-
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-
-            <div>
-
-                <h3 class="font-serif text-xl text-white">
-
-                    Studio Keity Beauty
-
-                </h3>
-
-                <p class="text-gray-400 text-sm mt-3">
-
-                    Extensão de cílios e design personalizado
-                    de sobrancelhas.
-
-                </p>
-
-            </div>
-
-            <div>
-
-                <h4 class="text-gold font-bold text-sm">
-
-                    Contato
-
-                </h4>
-
-                <p class="text-gray-400 text-sm mt-3">
-
-                    WhatsApp: (45) 99993-6604
-
-                </p>
-
-                <p class="text-gray-400 text-sm">
-
-                    Instagram: @keity.lashdesigner
-
-                </p>
-
-            </div>
-
-            <div>
-
-                <h4 class="text-gold font-bold text-sm">
-
-                    Atendimento
-
-                </h4>
-
-                <p class="text-gray-400 text-sm mt-3">
-
-                    Segunda a sábado<br>
-                    08h às 19h<br>
-                    Sob agendamento prévio.
-
-                </p>
-
-            </div>
-
-        </div>
-
-        <p class="text-gray-500 text-xs text-center mt-12">
-
-            © 2026 Studio Keity Beauty - Keity Loraine.
-
+<body>
+
+    <div class="container">
+        <!-- FOTO DE PERFIL (substitua o src pela sua foto real) -->
+        <img src="link-da-foto.jpg" alt="Vivi Chagas - Nail Designer" class="profile-photo">
+
+        <h1>Vivi Chagas</h1>
+        <div class="subtitle">Nail Designer</div>
+        
+        <p class="description">
+            Banho de gel e alongamentos de unhas personalizados. Resistência e elegância em cada detalhe! 💅✨
         </p>
 
-    </footer>
+        <!-- Catálogo de Serviços -->
+        <div class="section-title"><i class="fas fa-gem"></i> Serviços Exclusivos</div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3><i class="fas fa-shield-alt"></i> Banho de Gel</h3>
+                <p>Proteção e fortalecimento para suas unhas naturais com acabamento impecável e brilho duradouro.</p>
+            </div>
+            <div class="service-card">
+                <h3><i class="fas fa-heart"></i> Alongamento Personalizado</h3>
+                <p>Alongamentos sob medida projetados para valorizar o formato das suas mãos com alta resistência.</p>
+            </div>
+            <div class="service-card">
+                <h3><i class="fas fa-paint-brush"></i> Manutenção & Nail Art</h3>
+                <p>Cuidados periódicos e decorações exclusivas para manter o visual sempre sofisticado.</p>
+            </div>
+        </div>
 
-</main>
-
-<!-- JAVASCRIPT -->
-
-<script>
-const services = [
-    ['Extensão Fios Tecnológicos', 120, 'fa-eye'],
-    ['Design de Sobrancelhas + Henna', 45, 'fa-wand-magic-sparkles'],
-    ['Brow Lamination', 60, 'fa-sparkles'],
-    ['Lash Lifting Nutritivo', 70, 'fa-feather-pointed'],
-    ['Manutenção de Cílios', 60, 'fa-rotate-right'],
-    ['Remoção Segura de Cílios', 30, 'fa-shield-heart']
-];
-
-const options = document.getElementById('options');
-
-services.forEach(service => {
-
-    options.insertAdjacentHTML('beforeend', `
-        <label class="card rounded-2xl p-4 flex items-center gap-3 cursor-pointer">
-
-            <input
-                type="checkbox"
-                class="service-checkbox"
-                data-name="${service[0]}"
-                data-time="${service[1]}">
-
-            <i class="fa-solid ${service[2]} text-gold"></i>
-
-            <span class="text-sm text-white">
-                ${service[0]}
-            </span>
-
-            <span class="ml-auto text-xs text-gray-500">
-                ${service[1]}m
-            </span>
-
-        </label>
-    `);
-
-});
-
-const checks = [
-    ...document.querySelectorAll('.service-checkbox')
-];
-
-const button = document.getElementById('whatsapp');
-
-function updateBooking() {
-
-    const selected = checks.filter(check => check.checked);
-
-    const names = selected.map(
-        check => check.dataset.name
-    );
-
-    const total = selected.reduce(
-        (sum, check) => sum + Number(check.dataset.time),
-        0
-    );
-
-    document.getElementById('summary').textContent =
-        names.length
-        ? names.join(' + ')
-        : 'Nenhum procedimento selecionado';
-
-    document.getElementById('time').textContent =
-        `Tempo estimado: ${total} min`;
-
-    button.disabled = !names.length;
-
-    button.onclick = () => {
-
-        const message =
-`Olá Keity! Gostaria de agendar um horário no Studio Keity Beauty.
-
-Procedimentos: ${names.join(' + ')}
-
-Tempo estimado: ${total} minutos
-
-Quais horários estão disponíveis?`;
-
-        window.open(
-            'https://wa.me/5545999936604?text=' +
-            encodeURIComponent(message),
-            '_blank'
-        );
-
-    };
-
-}
-
-checks.forEach(check => {
-
-    check.addEventListener(
-        'change',
-        updateBooking
-    );
-
-});
-
-// NAVEGAÇÃO ATIVA
-
-const links = [
-    ...document.querySelectorAll('.sidebar-link')
-];
-
-const sections = links.map(link =>
-    document.querySelector(
-        link.getAttribute('href')
-    )
-);
-
-const observer = new IntersectionObserver(
-    entries => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                links.forEach(link => {
-
-                    link.classList.toggle(
-                        'active',
-                        link.getAttribute('href') ===
-                        '#' + entry.target.id
-                    );
-
-                });
-
-            }
-
-        });
-
-    },
-    {
-        rootMargin: '-35% 0px -55% 0px'
-    }
-);
-
-sections.forEach(section => {
-
-    if (section) {
-        observer.observe(section);
-    }
-
-});
-
-// MENU MOBILE
-
-const sidebar = document.getElementById('sidebar');
-
-document.getElementById('menuToggle').onclick = () => {
-
-    sidebar.classList.toggle('open');
-
-};
-
-links.forEach(link => {
-
-    link.addEventListener('click', () => {
-
-        sidebar.classList.remove('open');
-
-    });
-
-});
-</script>
+        <!-- Galeria de Fotos -->
+        <div class="section-title"><i class="fas fa-camera"></i> Galeria de Trabalhos</div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="overlay">
+                    <i class="fas fa-hand-sparkles fa-2x" style="color: #d4af37;"></i>
+                    <span>Banho de Gel</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="overlay">
+                    <i class="fas fa-hand-holding-heart fa-2x" style="color: #e8b4b8;"></i>
+                    <span>Alongamento</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="overlay">
+                    <i class="fas fa-magic fa-2x" style="color: #e8b4b8;"></i>
+                    <span>Nail Art</span>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="overlay">
+                    <i class="fas fa-star fa-2x" style="color: #d4af37;"></i>
+                    <span>Elegância</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Agendamento e Redes Sociais -->
+        <div class="buttons">
+            <a href="https://wa.me/5569993858055" target="_blank" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> AGENDAR PELO WHATSAPP
+            </a>
+            
+            <a href="https://instagram.com/vivianevicente" target="_blank" class="btn btn-instagram">
+                <i class="fab fa-instagram"></i> @vivianevicente
+            </a>
+        </div>
+        
+        <p class="slogan">Sua melhor versão começa aqui! 💕</p>
+    </div>
 
 </body>
 </html>
