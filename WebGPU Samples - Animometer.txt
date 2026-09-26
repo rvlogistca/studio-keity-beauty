@@ -1,0 +1,1 @@
+https://webgpu.github.io/webgpu-samples/?sample=animometer&need_sec_link=1&sec_link_scene=im
